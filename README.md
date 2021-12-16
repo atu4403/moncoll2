@@ -1,18 +1,14 @@
 pymongoの単純なラッパー。接続情報、db_name、collection_nameをまとめてdictに含めることでDB操作のコードをシンプルにする。
 
-[comment]: <> ([![Test]&#40;https://github.com/atu4403/moncoll2/actions/workflows/test.yml/badge.svg&#41;]&#40;https://github.com/atu4403/moncoll2/actions/workflows/test.yml&#41;)
+[![Test](https://github.com/atu4403/moncoll2/actions/workflows/test.yml/badge.svg)](https://github.com/atu4403/moncoll2/actions/workflows/test.yml)
 
-[comment]: <> ([![PyPI version]&#40;https://badge.fury.io/py/moncoll2.svg&#41;]&#40;https://badge.fury.io/py/moncoll2&#41;)
+[![PyPI version](https://badge.fury.io/py/moncoll2.svg)](https://badge.fury.io/py/moncoll2)
 
-[comment]: <> (document link)
+## Install
 
-[comment]: <> (## Install)
-
-[comment]: <> (```bash)
-
-[comment]: <> (pip install moncoll2)
-
-[comment]: <> (```)
+```bash
+pip install moncoll2
+```
 
 ## Useit
 
