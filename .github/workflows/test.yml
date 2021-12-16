@@ -4,21 +4,24 @@ on:
   pull_request:
 jobs:
   ci:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os:
-          - macos-11.0
-          - macos-latest
-          - windows-latest
-          - ubuntu-20.04
-          - ubuntu-latest
         python-version: [ 3.8, 3.9 ]
+        mongodb-version: [ '4.2', '4.4', '5.0' ]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.7.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
+          mongodb-username: testuser
+          mongodb-password: testpass
+          mongodb-db: test_db
+          mongodb-port: 12345
       - uses: atu4403/poetry-setup-multi-platform@v1
       - run: |
           poetry install
