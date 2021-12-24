@@ -16,17 +16,31 @@ def settings():
             "password": "testpass",
             "host": "localhost",
             "port": 12345,
-            "coll_name": "test_collenction",
+            "coll_name": "test_collection",
             "db_name": "test_db"
         }
 
 
-def test_hard(settings):
+def test_hard_1(settings):
     with MC(settings) as coll:
-        assert coll.full_name == 'test_db.test_collenction'
+        assert coll.full_name == 'test_db.test_collection'
         coll.insert_one({"a": 1})
         res = coll.find_one()
         assert res['a'] == 1
+        coll.drop()
+
+
+def test_hard_1_2(settings):
+    with MC(settings) as coll:
+        assert coll.full_name == 'test_db.test_collection'
+        coll.insert_one({"a": 1})
+        res = coll.find_one()
+        assert res['a'] == 1
+    with MC(settings) as coll:
+        assert coll.full_name == 'test_db.test_collection'
+        coll.insert_one({"b": 2})
+        res = coll.find_one({'b': {'$exists': True}})
+        assert res['b'] == 2
         coll.drop()
 
 
