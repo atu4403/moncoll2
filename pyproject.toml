@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "moncoll2"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["atu4403  <73111778+atu4403@users.noreply.github.com>"]
 homepage = "https://github.com/atu4403"
@@ -13,6 +13,7 @@ pymongo = "^4.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
+pytest-cov = "^3.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

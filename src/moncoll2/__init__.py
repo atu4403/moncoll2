@@ -1,6 +1,7 @@
 """
 .. include:: ../../README.md
 """
+import copy
 from pymongo import MongoClient, UpdateOne
 
 
@@ -16,9 +17,9 @@ class MC:
     """
 
     def __init__(self, settings: dict):
-        d = settings
-        self.db_name = d.get('db_name') or 'test_db'
-        self.collection_name = d.get('coll_name') or d.get('collection_name') or 'test_collection'
+        d = copy.deepcopy(settings)
+        self.db_name = d.get('db_name') or 'test'
+        self.collection_name = d.get('coll_name') or d.get('collection_name') or 'test_coll'
         d.pop('db_name', None)
         d.pop('coll_name', None)
         d.pop('collection_name', None)
