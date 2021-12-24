@@ -126,3 +126,8 @@ class TestToBulklist:
         with pytest.raises(BulkItemNotIdError) as e:
             to_bulklist(li)
         assert "_id property does not exist: {'name': 'Karin', 'gender': 'female'}" in str(e)
+
+    def test_bulk_invalid_type(self):
+        with pytest.raises(TypeError) as e:
+            to_bulklist({'a': 1})
+        assert "must be a list" in str(e)
