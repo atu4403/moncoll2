@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "moncoll2"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["atu4403  <73111778+atu4403@users.noreply.github.com>"]
 homepage = "https://github.com/atu4403"
